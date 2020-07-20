@@ -683,3 +683,100 @@ function minorLocrianScale() {
 		"<li>" + sixth + "</li>" +
 		"<li>" + seven + "</li></ul>";
 }
+
+/*
+ * FIND THE CHORD
+ */
+
+function myChordFunction() {
+	/* add a check to empty var */
+	var chordName = document.getElementById("myChord").value;
+	var countChar = chordName.length;
+	var rootNote = chordName.charAt(0);
+	var secondChar = chordName.charAt(1);
+	var thirdChar = chordName.charAt(2);
+
+	console.log(chordName);
+
+	switch (secondChar) {
+  		case 'm':
+    			var nature = "minor";
+    			break;
+  		case 'M':
+		case '' :
+    			var nature = "major";
+    			break;
+		case 's':
+			var sus4 = chordName.search("sus4");
+			if ( sus4 == "1" ) {
+				var nature = "suspended 4";
+			} else {
+				var nature = "suspended 2";
+			}
+			break;
+		case 'a':
+			if ( thirdChar == "u" ) {
+				var nature = "augmented";
+			} else if ( thirdChar == "d" ) {
+				var nature = "added";
+			}
+			break;
+		case 'd':
+			var nature = "dim";
+			break;
+		case '2':
+			var nature = "add 9";
+			break;
+		case '5':
+			var nature = "power chord";
+			break;
+		case '6':
+			var nature = "sixth";
+			break;
+		case '7':
+			var nature = "major dominant seven";
+			break;
+		case 'b':
+			var nature = "bemol";
+			break;
+		case '#':
+			var nature = "dieze";
+			break;
+  		default:
+    			var nature = "I don't know this chord";
+	}
+
+	switch (thirdChar) {
+		case 'd':
+			var thirdCar = "dim";
+			break;
+		case 's':
+			var toto = chordName.search("sus2");
+			console.log(toto);
+                        if ( toto == "2" ) {
+                                var thirdCar = "suspended 2";
+                        } else {
+                                var thirdCar = "suspended 4";
+			}
+			break;
+		case '5':
+			var thirdCar = "power chord";
+			break;
+		case '7':
+			var thirdCar = "dominant seven";
+			break;
+		default:
+			var thirdCar = '';
+
+	}
+
+/*	if (chordName == null && chordName == '') {
+		document.getElementById("myChordResult").innerHTML = "Please fill the blank";
+	}
+*/
+	console.log(nature);
+	console.log(thirdCar);
+	document.getElementById("mychordResult").innerHTML = 
+		"<h3> Chord Name (" + countChar + ") : " + chordName + "</h3>" +
+		"<ul><li>" + rootNote + "" + nature + "" + thirdCar + "</li></ul>";
+}
