@@ -6,8 +6,8 @@ This project is still in development. Documentation is in progress.
 
 ## How to install
 
-_in progress_
+_work in progress_
 
 ## How to use
 
-_in progress_
+_work in progress_
