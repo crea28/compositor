@@ -5,7 +5,6 @@
 var notes = [ 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B' ];
 var max = notes.length;
 
-
 /* 
 	CHORDS FUNCTIONS
  */
@@ -105,7 +104,6 @@ function majorSevenChord() {
 		var seven = notes[posSeventh];
 	}
 
-	
 	document.getElementById("majorSevenResult").innerHTML =
 		"<h3>" + rootNote + " Major Seven Chord (T - 3m - 5 - 7)</h3>" +  
 		"<ul><li>Root Note : " + rootNote + "</li> " + 
@@ -139,7 +137,6 @@ function minorSevenChord() {
 		var seven = notes[posSeventh];
 	}
 
-	
 	document.getElementById("minorSevenResult").innerHTML =
 		"<h3>" + rootNote + " Minor Seven Chord (T - 3m - 5 - 7)</h3>" +  
 		"<ul><li>Root Note : " + rootNote + "</li> " + 
@@ -283,7 +280,6 @@ function sus4Chord() {
 /*
  * SCALES FUNCTIONS
  */
-
 
 function majorIonianScale() {
 	var rootNote = document.getElementById("myNote").value; 
